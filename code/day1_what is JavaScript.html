@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>直接写入HTML输出流</title>
+</head>
+<body>
+	<h1>这是我第一天的学习内容</h1>
+
+	<!-- 直接写入HTML输出流 -->
+	<script type="text/javascript">
+	document.write("<h1>这是一个标题</h1>");
+	document.write("<p>这是一个段落</p>");
+	</script>
+
+	<!-- 对事件的反应 -->
+	<button type = "button" onclick="alert('测试对事件的反应！')">其实我什么都不会！</button>
+
+	<!-- 改变HTML内容 -->
+	<p id = "Demo">
+	JS能改变HTML元素的内容
+	</p>
+	<script type="text/javascript">
+	function changeTheText()
+	{
+		var x = document.getElementById("Demo");//找到元素ID
+		x.innerHTML = "hello HTML!"//改变文本
+	}
+	</script>
+	<button type = "button" onclick="changeTheText()">改变世界！</button>
+
+	<!-- 改变HTML图像 -->
+	<script type="text/javascript">
+	function changeImage()
+	{
+		var element = document.getElementById("myimage");
+		if (element.src.match("bulbon")) 
+		{
+			element.src = "image/pic_bulboff.gif"
+		}
+		else
+		{
+			element.src = "image/pic_bulbon.gif"
+		}
+	}
+	</script>
+	<p>点击就可以关闭这个灯泡</p>
+	<img id = "myimage" onclick = "changeImage()" src="image/pic_bulbon.gif" width="100" height="180">
+
+	<!-- 改变HTML样式 -->
+	<p id = "type">点击按键可以改变样式</p>
+	<script type="text/javascript">
+	function changeType()
+	{
+		var y = document.getElementById("type"); 
+		y.style.color = "#ff0000"
+	}
+	</script>
+	<button type="button" onclick="changeType()">变变变！</button>
+
+	<!-- 验证输入 -->
+	<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+	<input id="demo" type="text">//输入框
+	<script>
+	function myFunction()
+	{
+		var x=document.getElementById("demo").value;
+		if(x==""||isNaN(x))
+		{
+			alert("不是数字");
+		}
+	}
+	</script>
+	<button type="button" onclick="myFunction()">猜猜我是谁！</button>
+</body>
+</html>
