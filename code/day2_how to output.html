@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript用法</title>
+</head>
+<body>
+	<p id = "demo">我在这里真的不会！</p>
+	<button type="button" onclick="myFunction()">点我在外面</button>
+	<!-- 脚本在外部 -->
+	<script type="text/javascript" src = "js/myScript.js"></script>	
+	<!-- JavaScript显示数据的方式 -->
+	<!-- 使用window.alert()弹出警告框 -->
+	<script type="text/javascript">
+		window.alert(1+1);
+	</script>
+	<!-- 使用document.write()方法将内容写到HTML文档中 -->
+	<!-- document.write是直接写入到页面的内容流，如果在写之前没有调用document.open,浏览器会自动调用open。每次写完关闭之后重新调用该函数，会导致页面被重写。 -->
+	<!-- innerHTML则是DOM页面元素的一个属性，代表该元素的html内容。你可以精确到某一个具体的元素来进行更改。如果想修改document的内容，则需要修改document.documentElement.innerElement。innerHTML很多情况下都优于document.write，其原因在于其允许更精确的控制要刷新页面的那一个部分。 -->
+	<script type="text/javascript">
+		document.write("<p>这是通过JS写进来的！</p>");
+		document.write("time:" + Date());
+	</script>
+	<!-- 使用innerHTML写到HTML元素 (见调用外部JS)-->
+	<!-- 使用console.log()写入到浏览器控制台 -->
+	<!-- 他能看到结构化的东西，如果是alert，淡出一个对象就是[object object],但是console能看到对象的内容。console不会打断你页面的操作，如果用alert弹出来内容，那么页面就死了，但是console输出内容后你页面还可以正常操作。 -->
+	<script type="text/javascript">
+		function writeToConsole1()
+		{
+			var x = 8;
+			var y = 9;
+			var sum = x + y;
+			console.log("测试一下！" + sum);
+		}
+	</script>
+	<p></p>
+	<button style="button" onclick="writeToConsole1()">看看控制台</button>
+
+
+</body>
+</html>
